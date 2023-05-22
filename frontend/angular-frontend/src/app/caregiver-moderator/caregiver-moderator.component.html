@@ -1,0 +1,37 @@
+<div id="all">
+    <div id="header" class="large-12 columns">
+        <div id="title1">Gestion les aidants</div>
+    </div>
+    <div id="mid">
+        <ul class="users">
+            <li *ngFor="let user of users | async" 
+                [class.selected]="user === selectedUser" 
+                (click)="onSelect(user)">
+                <span class="badge">{{user.id}}</span>{{user.username}}
+            </li>
+        </ul>
+    </div>
+    <div id="right">
+        <div class="codes" *ngIf="selectedUser">
+            <div class="code-column">
+                <h3>Codes des fichiers</h3>
+                <ul>
+                <li *ngFor="let fileCode of (fileCodes | async)">{{ fileCode }}</li>
+                </ul>
+            </div>
+            <div class="code-column">
+                <h3>Codes des questionnaires</h3>
+                <ul>
+                <li *ngFor="let surveyCode of (surveyCodes | async)">{{ surveyCode }}</li>
+                </ul>
+            </div>
+        </div>
+        <!-- <div class="files" *ngIf="selectedUser">
+            <h2>Fichiers</h2>
+                <li *ngFor="let file of fileInfos | async">
+                    <a href="{{ file.url }}">{{ file.name }}</a>
+                </li>
+        </div> -->
+        <!-- <a *ngIf="selectedUser" href="{{downloadFilesByUserUrl}}" class="install" ><button id="btndownload">Télécharger zip</button></a> -->
+    </div>
+</div>

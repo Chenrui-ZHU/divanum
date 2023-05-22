@@ -1,0 +1,50 @@
+<div id="all">
+    <div id="head"></div>
+    <div class="left">
+        <button routerLink="../survey-creator" type="button" id="left1">Créer questionnaire</button>
+        <a href="{{downloadResultsUrl}}"><button type="button" id="left2">Récupérer tous questionnaires</button></a>
+        <button routerLink="../caregiver-moderator" type="button" id="left3">Gestion des aidants</button>
+        <button routerLink="/register" type="button" id="left4">Enregistrer un nouvel aidant</button><br>
+        <button routerLink="/register_admin" type="button" id="left5">Enregistrer un nouvel évaluateur</button><br>
+    </div>
+    <div class="right">
+        
+        <div id="Trier">
+            <div id="para">Afficher les fichiers de : </div>
+        </div>
+        <div id="content2" class="large-12 columns">
+            <div id="button2">
+                <ul class="button-group radis">
+                    <li *ngFor="let user of (users | async)?.slice(down, up)" 
+                        [class.selected]="user === selectedUser" 
+                        (click)="onSelect(user)">
+                        <button type="button" class="button2" id="btn21" >{{user.username}}</button>
+                        <a href="{{downloadFilesByUserUrl}}"><label class="download" id="down1" ></label></a>
+                        <div class="files" *ngIf="user === selectedUser">
+                            <li *ngFor="let file of (fileInfos | async)">
+                              <a href="{{ file.url }}">{{ file.name }}</a>
+                            </li>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div id="page">
+                <div id="page_left">
+                    <button type="button" class="Triangle" id="Triangle1" (click)="showLastPage()" [disabled]="currentPage <= 1"></button>
+                </div>
+               
+                <div class="pagenum">
+                    <div class="page1">
+                        <a id="p1">{{currentPage}}</a>
+                    </div>
+                </div>
+                <div id="page_right">
+                    <button type="button" class="Triangle" id="Triangle2" (click)="showNextPage()"></button>
+                </div>
+                
+            </div>
+            <a href="{{downloadUrl}}"><button type="button" class="TELECHARGER">TELECHARGER TOUS LES FICHIERS</button></a>
+        </div>
+    </div>
+    
+  </div>

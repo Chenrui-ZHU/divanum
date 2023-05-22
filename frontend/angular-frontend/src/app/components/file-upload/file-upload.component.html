@@ -1,0 +1,75 @@
+<div ng-app="Quick" ng-cloak>
+  <div ng-controller="TestDisply">
+
+    <div class="large-12 columns" id="all" ng-show="home" >
+      <div id="connexion" *ngIf="!toUpload&&!toSurvey">
+          <div id="head"></div>
+          <div id="head1">DIVA'NUM</div>
+          <div id="head2">Utiliser un code d'ajout ou de questionnaire ?</div>
+          <article id="connect-form">
+              <p id="para">Veuillez entrer le code indiqué dans votre carnet </p>
+              <div class="input-group-form-group">
+                  <input type="text" class="form-control" placeholder="Code" value=""
+                  [(ngModel)]="form.code" required #code="ngModel">
+              </div>
+              
+          </article>
+          
+          <button ng-click="toggleMenu()" type="button" class="btnv1" (click)="file_survey()">Valider</button>
+      </div>
+
+      <survey [model]="surveyModel" *ngIf="toSurvey"></survey>
+      <div class="foot" *ngIf="!toSurvey">
+          <div id="Logo_foot">
+              <div id="logo_foot_l"></div>
+          </div>
+          
+      </div>
+    </div>
+      
+    <div class="row" id="window" ng-show="load" class="ng-hide" *ngIf="toUpload">
+      <div id="c1">
+        <button ng-click="back()" type="button" class="goBack" (click)="toUpload=!toUpload">Retour</button>
+        <div class="col-8">
+          <label class="btn btn-default p-0" id="btnup">
+            <input type="file" id="input" (change)="selectFile($event)" />
+          </label>
+        </div>
+
+        <div class="col-4">
+          <button
+            type="button"
+            class="btn btn-success btn-sm"
+            [disabled]="!selectedFiles"
+            (click)="upload()"
+            class="btnv"
+            
+          >
+            Valider
+          </button>
+        </div>
+
+        <div *ngIf="currentFile" class="progress my-3" id="progress">
+          <div
+            class="progress-bar progress-bar-info"
+            role="progressbar"
+            attr.aria-valuenow="{{ progress }}"
+            aria-valuemin="0"
+            aria-valuemax="100"
+            [ngStyle]="{ width: progress + '%' }"
+          >
+            {{ progress }}%
+          </div>
+        </div>
+    
+        <div *ngIf="message" class="alert alert-secondary" role="alert" id="progress">
+          {{ message }}
+        </div>
+        
+      </div>
+    </div>
+    
+    
+
+  </div>
+</div>

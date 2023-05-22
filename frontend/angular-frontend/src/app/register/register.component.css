@@ -1,0 +1,69 @@
+label {
+  display: block;
+  margin-top: 10px;
+}
+
+.card-container.card {
+  max-width: 400px !important;
+  padding: 40px 40px;
+}
+
+.card {
+  background-color: #ffac66;
+  padding: 20px 25px 30px;
+  margin: 0 auto 25px;
+  height: 42vh;
+  margin-top: 17vh;
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  border-radius: 20px;
+  -moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+}
+div{
+  text-align: center;
+}
+.profile-img-card {
+  width: 96px;
+  height: 96px;
+  margin: 0 auto 10px;
+  display: block;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+}
+#head{
+  height: 50px;
+}
+#all{
+  background-color: #ffd8b8;
+  background-size: cover;
+  height: 93vh;
+}
+
+#register:hover{
+  
+}
+
+#name{
+  text-align: center;
+  font-size: 1.5em;
+}
+
+#btns{
+  text-align: center;
+  margin-top: 4vh;
+  color: rgb(255, 255, 255);
+  height: 5vh;
+  width: 14vw;
+  border: 0;
+  border-radius: 10px;
+}
+button:hover {
+  background-color: #84C0D3;
+}
+button:focus {
+  background-color: #84C0D3;
+  color: rgb(255, 255, 255);
+}

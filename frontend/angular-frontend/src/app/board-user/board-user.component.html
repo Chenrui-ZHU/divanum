@@ -1,0 +1,50 @@
+<body>
+    <div id="all">
+        <div id="header"></div>
+        <div id="content">
+            <div id="left">
+                <div id="left1">
+                    <div id="message">
+                      <button routerLink="../survey" type="button" class="btnBack">Vous avez un questionnaire en attente</button>
+                    </div>
+                </div>
+                  <div id="ptc"></div>
+                
+            </div>
+            <div id="right">
+                <div id="right1">
+                    Semaine {{id}}
+                </div>
+                <div id="right2">
+                    <label class="joindre">
+                        <input type="file" id="input" (change)="fileComponent.selectFile($event)" />
+                    </label>
+                    <div id="text">ouvrir appareil photo ou micro</div>
+                    <button
+                        type="button"
+                        class="valider2"
+                        [disabled]="!fileComponent.selectedFiles"
+                        (click)="fileComponent.uploadById(id)"
+                    > 
+                    Valider
+                    </button>
+                    
+                </div>
+            </div>
+        </div>
+        <div *ngIf="fileComponent.currentFile" class="progress my-3">
+            <div
+              class="progress-bar progress-bar-info"
+              role="progressbar"
+              attr.aria-valuenow="{{ fileComponent.progress }}"
+              aria-valuemin="0"
+              aria-valuemax="100"
+              [ngStyle]="{ width: fileComponent.progress + '%' }"
+            >
+              {{ fileComponent.progress }}%
+            </div>
+          </div>
+      
+    </div>
+
+</body>

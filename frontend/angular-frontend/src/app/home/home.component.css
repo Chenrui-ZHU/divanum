@@ -1,0 +1,75 @@
+#all{
+    background-color: #ffd8b8;
+    background-size: cover;
+    height: 93vh;
+}
+
+
+
+div{
+    text-align: center;
+}
+#left{
+    width: 20vw;
+    height: 30vh;
+    position: absolute;
+    background-image: url(../../elements_graphiques/aide3.png);
+    background-size: 20vw 30vh;
+    top: 10vh;
+    left: 10vh;
+}
+#right{
+    width: 20vw;
+    height: 30vh;
+    position: absolute;
+    background-image: url(../../elements_graphiques/aide2.png);
+    background-size: 20vw 30vh;
+    top: 10vh;
+    right: 10vh;
+}
+#header{
+    position: relative;
+    
+    height: 20vh;
+    text-align: center;
+    font-size: 5em;
+    
+}
+
+
+#explain{
+    position: relative;
+    font-family: Georgia;
+    font-style:italic;
+    margin: auto;
+    margin-top: 5vh;
+    text-align: center;
+    font-size: 1.5em;
+    width: 50%;
+    text-align: center;
+}
+#oubl{
+    color: rgb(0, 0, 0);
+    text-decoration:underline;
+}
+
+#login{
+    border-radius: 2.5vh;
+    border-color: black;
+    border-width: 2px;
+    width: 23vw;
+    height: 6vh;
+    text-align: center;
+    background-color: #ff9100;
+    font-size: 1.6em;
+    color: black;
+    margin: 20px 0;
+
+}
+#login:hover {
+    background-color: #84C0D3;
+}
+#login:focus {
+    background-color: #84C0D3;
+    color: rgb(255, 255, 255);
+}
