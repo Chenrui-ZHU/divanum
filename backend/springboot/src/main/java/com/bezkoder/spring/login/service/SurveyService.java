@@ -62,20 +62,23 @@ public class SurveyService {
         surveyResultRepository.save(sr);
     }
 
+    public Stream<Survey> getAllSurveys(){return surveyRepository.findAll().stream();}
     public Stream<SurveyResult> getAllSurveyResults(){ return surveyResultRepository.findAll().stream();}
 
     public void deleteAllSurveys(){surveyRepository.deleteAll();}
+
+
     public void initSurveyCodeForAll(Survey s){
-        Code code = codeService.initCode();
-        code.setInfo("SURVEY"+code.getInfo());
-        codeService.saveCode(code);
         for(Notebook nb: userService.getAllNBs().collect(Collectors.toList())){
+            Code code = codeService.initCode(3);
+            code.setInfo("QST"+code.getInfo());
+            codeService.saveCode(code);
             Set<Code> codes = nb.getCodes();
             codes.add(code);
             nb.setCodes(codes);
             notebookRepository.save(nb);
+            s.addCodes(code);
         }
-        s.setCode(code);
         surveyRepository.save(s);
     }
 }

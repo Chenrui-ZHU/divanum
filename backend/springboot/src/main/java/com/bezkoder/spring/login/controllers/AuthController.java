@@ -6,9 +6,9 @@ import java.util.stream.Collectors;
 import javax.validation.Valid;
 
 import com.bezkoder.spring.login.models.*;
-import com.bezkoder.spring.login.repository.CodeRepository;
-import com.bezkoder.spring.login.repository.NotebookRepository;
+import com.bezkoder.spring.login.repository.*;
 import com.bezkoder.spring.login.service.CodeService;
+import com.bezkoder.spring.login.service.SurveyService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.ResponseCookie;
@@ -25,8 +25,6 @@ import com.bezkoder.spring.login.payload.request.LoginRequest;
 import com.bezkoder.spring.login.payload.request.SignupRequest;
 import com.bezkoder.spring.login.payload.response.UserInfoResponse;
 import com.bezkoder.spring.login.payload.response.MessageResponse;
-import com.bezkoder.spring.login.repository.RoleRepository;
-import com.bezkoder.spring.login.repository.UserRepository;
 import com.bezkoder.spring.login.security.jwt.JwtUtils;
 import com.bezkoder.spring.login.security.services.UserDetailsImpl;
 
@@ -51,6 +49,9 @@ public class AuthController {
   CodeRepository codeRepository;
 
   @Autowired
+  SurveyRepository surveyRepository;
+
+  @Autowired
   PasswordEncoder encoder;
 
   @Autowired
@@ -58,6 +59,9 @@ public class AuthController {
 
   @Autowired
   CodeService codeService;
+
+  @Autowired
+  SurveyService surveyService;
 
   @PostMapping("/signin")
   public ResponseEntity<?> authenticateUser(@Valid @RequestBody LoginRequest loginRequest) {
@@ -85,7 +89,7 @@ public class AuthController {
   @PreAuthorize("hasRole('ADMIN')")
   public ResponseEntity<?> registerUser(@Valid @RequestBody SignupRequest signUpRequest) {
     if (userRepository.existsByUsername(signUpRequest.getUsername())) {
-      return ResponseEntity.badRequest().body(new MessageResponse("Error: Username is already taken!"));
+      return ResponseEntity.badRequest().body(new MessageResponse("Erreur: Nom d'utilisateur déjà pris!"));
     }
 
     // Create new user's account
@@ -132,9 +136,18 @@ public class AuthController {
     // Create new codes for notebook
     Set<Code> codes = new HashSet<>();
     for (int i =0; i<10; i++){
-      Code code = codeService.initCode();
+      Code code = codeService.initCode(5);
       codes.add(code);
       codeRepository.save(code);
+    }
+
+    for(Survey s: surveyService.getAllSurveys().collect(Collectors.toList())){
+      Code surveycode = codeService.initCode(3);
+      surveycode.setInfo("QST"+surveycode.getInfo());
+      codeService.saveCode(surveycode);
+      codes.add(surveycode);
+      s.addCodes(surveycode);
+      surveyRepository.save(s);
     }
 
     notebook.setCodes(codes);

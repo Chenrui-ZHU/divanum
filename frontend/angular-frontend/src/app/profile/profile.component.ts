@@ -27,11 +27,11 @@ export class ProfileComponent implements OnInit {
 
     // Separate the codes into two lists
     this.fileCodes = this.currentUserCodes.pipe(
-      map((codes: any[]) => codes.filter(code => !code.includes("SURVEY")))
+      map((codes: any[]) => codes.filter(code => !code.includes("QST")))
     );
 
     this.surveyCodes = this.currentUserCodes.pipe(
-      map((codes: any[]) => codes.filter(code => code.includes("SURVEY")))
+      map((codes: any[]) => codes.filter(code => code.includes("QST")))
     );
   }
 

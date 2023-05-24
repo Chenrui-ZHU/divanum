@@ -171,8 +171,24 @@ public class FileController {
 
     ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
     try (ZipOutputStream zipOutputStream = new ZipOutputStream(byteArrayOutputStream)) {
+      Map<String, Integer> fileNameCount = new HashMap<>();
       for (FileDB file : files) {
-        ZipEntry zipEntry = new ZipEntry(file.getName());
+        String originalFileName = file.getName();
+        Integer count = fileNameCount.getOrDefault(originalFileName, 0);
+        fileNameCount.put(originalFileName, count + 1);
+        String fileName = originalFileName;
+        if (count > 0) {
+          int dotIndex = originalFileName.lastIndexOf('.');
+          if (dotIndex != -1) {
+            fileName = originalFileName.substring(0, dotIndex)
+                    + '_' + count
+                    + originalFileName.substring(dotIndex);
+          } else {
+            fileName = originalFileName + '_' + count ;
+          }
+        }
+
+        ZipEntry zipEntry = new ZipEntry(fileName);
         zipOutputStream.putNextEntry(zipEntry);
         zipOutputStream.write(file.getData());
         zipOutputStream.closeEntry();

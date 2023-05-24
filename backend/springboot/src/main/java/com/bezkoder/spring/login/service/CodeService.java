@@ -31,9 +31,9 @@ public class CodeService {
         return codeRepository.findAll().stream();
     }
 
-    public Code initCode(){
+    public Code initCode(int length){
         Code code = new Code();
-        String info = getStringRandom(5);
+        String info = getStringRandom(length);
         for(Code c: getAllCodes().collect(Collectors.toList())){
             if (Objects.equals(c.getInfo(), info)){
                 info = getStringRandom(5);

@@ -3,6 +3,8 @@ package com.bezkoder.spring.login.models;
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Table(name = "surveys")
@@ -16,11 +18,11 @@ public class Survey{
     @Size(max = 1000)
     private String json;
 
-    @OneToOne(fetch = FetchType.LAZY)
+    @OneToMany(fetch = FetchType.LAZY)
     @JoinTable(name = "survey_code",
             joinColumns = @JoinColumn(name = "survey_id"),
             inverseJoinColumns = @JoinColumn(name = "code_id"))
-    private Code code = new Code();
+    private Set<Code> codes = new HashSet<>();
 
     public Survey(){}
     public Survey(String json){
@@ -43,12 +45,16 @@ public class Survey{
         this.id = id;
     }
 
-    public Code getCode() {
-        return code;
+    public Set<Code> getCodes() {
+        return codes;
     }
 
-    public void setCode(Code code) {
-        this.code = code;
+    public void setCodes(Set<Code> codes) {
+        this.codes = codes;
+    }
+
+    public void addCodes(Code code){
+        this.codes.add(code);
     }
 }
 //

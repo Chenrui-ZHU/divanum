@@ -1,34 +1,123 @@
-#all{
-    background-color: #ffd8b8;
-    background-size: cover;
-    height: 150vh;
-    width: 100vw;
-}
 
-#head{
-    font-size: 3em;
-    font-weight: 1000;
-    text-align: center;
-}
-#title{
-    font-size: 2em;
-    font-weight: 1000;
-    margin-top: 2vh;
-    margin-left: 3vh;
-}
-#txt{
-    font-size: 1em;
-    font-weight: 1000;
-    margin: 1vh;
-    margin-left: 10vw;
-}
-#t1,#t2,#t3{
-    height: auto;
-    width: 60vw;
-    border: 1em;
-    margin-left: 20vw;
-    border-color: #ff7b00;
-    border-width: 5px;
-    border-style: solid;
-    margin-top: 1vh;
-}
+@media only screen and (min-width: 768px) {
+    #all{
+        background-color: #ffd8b8;
+        background-size: cover;
+        height: 150vh;
+        width: 100vw;
+    }
+    
+    #head{
+        font-size: 3em;
+        font-weight: 1000;
+        text-align: center;
+    }
+    #title{
+        font-size: 2em;
+        font-weight: 1000;
+        margin-top: 2vh;
+        margin-left: 3vh;
+    }
+    #txt{
+        font-size: 1em;
+        font-weight: 1000;
+        margin: 1vh;
+        margin-left: 10vw;
+    }
+    #t1,#t2,#t3{
+        height: auto;
+        width: 60vw;
+        border: 1em;
+        margin-left: 20vw;
+        border-color: #ff7b00;
+        border-width: 5px;
+        border-style: solid;
+        margin-top: 1vh;
+    }
+    #pass{
+        border-radius: 0.5vh;
+        border-width: 2px;
+        width: 40vw;
+        height: 4vh;
+        text-align: center;
+        font-size: 0.6em;
+        color: black;
+        margin-left: 3vw;
+    }
+    .button{
+        border-radius: 0.5vh;
+        border-color: black;
+        border-width: 2px;
+        width: 12vw;
+        height: 4vh;
+        text-align: center;
+        background-color: #cfcfcf;
+        font-size: 1em;
+        font-weight: 800;
+        color: black;
+        margin: 15px 0;
+    }
+  }
+  
+ 
+  
+  @media only screen and (max-width: 767px) {
+    #all{
+        background-color: #ffd8b8;
+        background-size: cover;
+        height: 250vh;
+        width: 100vw;
+    }
+    
+    #head{
+        font-size: 2em;
+        font-weight: 1000;
+        text-align: center;
+    }
+    #title{
+        font-size: 1em;
+        font-weight: 1000;
+        margin-top: 2vh;
+        margin-left: 3vh;
+    }
+    #txt{
+        font-size: 0.7em;
+        font-weight: 1000;
+        margin: 1vh;
+        margin-left: 10vw;
+    }
+    #t1,#t2,#t3{
+        height: auto;
+        width: 80vw;
+        border: 1em;
+        margin-left: 10vw;
+        border-color: #ff7b00;
+        border-width: 5px;
+        border-style: solid;
+        margin-top: 1vh;
+    }
+    #pass{
+        border-radius: 0.5vh;
+        border-width: 2px;
+        width: 45vw;
+        height: 30px;
+        text-align: center;
+        font-size: 0.6em;
+        color: black;
+        margin-left: 3vw;
+    }
+    .button{
+        border-radius: 0.5vh;
+        border-color: black;
+        border-width: 2px;
+        width: 25vw;
+        height: 30px;
+        text-align: center;
+        background-color: #cfcfcf;
+        font-size: 0.6em;
+        font-weight: 800;
+        color: black;
+        margin: 15px 0;
+    }
+  }
+

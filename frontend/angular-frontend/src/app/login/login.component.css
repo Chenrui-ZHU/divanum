@@ -1,3 +1,7 @@
+
+@media only screen and (min-width: 768px) {
+  
+
 label {
   display: block;
   margin-top: 10px;
@@ -68,4 +72,85 @@ button:focus {
 
 
 
+}
+
+
+
+
+@media only screen and (max-width: 767px) {
+  
+
+label {
+  display: block;
+  margin-top: 10px;
+}
+
+.card-container.card {
+  max-width: 90vw !important;
+
+}
+div{
+  text-align: center;
+}
+#head{
+  height: 10vh;
+}
+.card {
+  background-color: #f5ab5fff;
+  padding: 20px 25px 30px;
+  height: 70vh;
+  width: 90vw;
+  margin-left: 5vw;
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  border-radius: 20px;
+  -moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+}
+
+.profile-img-card {
+  width: 96px;
+  height: 96px;
+  margin: 0 auto 10px;
+  display: block;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+}
+
+#all{
+  background-color: #ffd8b8;
+  background-size: cover;
+  height: 93vh;
+}
+#name{
+  text-align: center;
+  font-size: 1.5em;
+}
+
+#btns{
+  text-align: center;
+  margin-top: 2vh;
+  color: black;
+  height: 6vh;
+  width: 70vw;
+  border: 0;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: larger;
+}
+button:hover {
+  background-color: #84C0D3;
+}
+button:focus {
+  background-color: #84C0D3;
+  color: rgb(255, 255, 255);
+}
+
+
+
+
+
+}
 

@@ -37,11 +37,11 @@ export class CaregiverModeratorComponent implements OnInit{
     this.codes = this.storageService.getCodesByUser(this.selectedUser.id);
     // Separate the codes into two lists
     this.fileCodes = this.codes.pipe(
-      map((codes: any[]) => codes.filter(code => !code.includes("SURVEY")))
+      map((codes: any[]) => codes.filter(code => !code.includes("QST")))
     );
 
     this.surveyCodes = this.codes.pipe(
-      map((codes: any[]) => codes.filter(code => code.includes("SURVEY")))
+      map((codes: any[]) => codes.filter(code => code.includes("QST")))
     );
     this.downloadFilesByUserUrl = `http://34.155.164.205/api/auth/download/${this.selectedUser.id}/files`;
   }

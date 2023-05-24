@@ -76,7 +76,7 @@ export class FileUploadComponent implements OnInit {
 
   file_survey(): void{
     const{ code } = this.form;
-    if(code.includes("SURVEY")){
+    if(code.includes("QST")){
       this.allCodes = this.storageService.getAllCodes();
       this.allCodes.subscribe((data) => {
         const codeExistsAndNotUsed1 = data.some((c: { info: any; used: boolean; }) => {
@@ -107,6 +107,9 @@ export class FileUploadComponent implements OnInit {
       
         if (codeExistsAndNotUsed) {
           this.toUpload = !this.toUpload;
+          this.message = '';
+          this.progress = 0;
+          this.currentFile = null as unknown as File;
         } else {
           alert("Le code est utilisé ou n'existe pas.");
         }

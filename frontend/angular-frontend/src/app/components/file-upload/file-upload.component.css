@@ -1,151 +1,320 @@
-#window{
-    position: absolute;
-    top:2vh;
-}
-#c1{
-    position: absolute;
-    top:15vh;
-    left: 20vw;
-    height: 55vh;
-    width: 60vw;
-    background-color: rgb(133, 177, 145);
-    border: 0.5em;
-    border-color: rgb(238, 148, 30);
-    border-style: solid;
-}
-#btnup{
-    position: absolute;
-    background-image: url(../../../elements_graphiques/joindre.png);
-    width: 40vw;
-    height: 30vh;
-    background-size:40vw 30vh;
-    text-align: center;
-    top: 8vh;
-    left: 10vw;
-}
-#input{
-    position: absolute;
-    top:25vh;
-    left: 7vw;
-    width: 30vw;
-}
-.btnv{
-    position: absolute;
-    background-color: rgb(255, 255, 255);
-    color: black;
-    height: 5vh;
-    width: 10vw;
-    border-radius: 1vh;
-    top: 39vh;
-    left: 40vw;
-    font-size: 1em;
-    font-weight: 700;
-}
 
-button:hover {
-    background-color: #84C0D3;
+@media only screen and (min-width: 768px) {
+    #window{
+        position: absolute;
+        top:2vh;
+    }
+    #c1{
+        position: absolute;
+        top:15vh;
+        left: 20vw;
+        height: 60vh;
+        width: 60vw;
+        background-color: rgb(133, 177, 145);
+        border: 0.5em;
+        border-color: rgb(238, 148, 30);
+        border-style: solid;
+    }
+    #btnup{
+        position: absolute;
+        background-image: url(../../../elements_graphiques/joindre.png);
+        width: 40vw;
+        height: 30vh;
+        background-size:40vw 30vh;
+        text-align: center;
+        top: 8vh;
+        left: 10vw;
+    }
+    #input{
+        position: absolute;
+        top:25vh;
+        left: 7vw;
+        width: 30vw;
+    }
+    .btnv{
+        position: absolute;
+        background-color: rgb(255, 255, 255);
+        color: black;
+        height: 5vh;
+        width: 10vw;
+        border-radius: 1vh;
+        top: 39vh;
+        left: 40vw;
+        font-size: 1em;
+        font-weight: 700;
+    }
+    
+    button:hover {
+        background-color: #84C0D3;
+      }
+    button:focus {
+        background-color: #84C0D3;
+        color: rgb(255, 255, 255);
+      }
+    
+    
+    #head{
+        height: 5vh;
+    }  
+    #head1{
+        font-size: 4em;
+        text-align: center;
+    }  
+    #head2{
+        font-size: 2.5em;
+        text-align: center;
+    }  
+    #para{
+        margin-top: 5vh;
+        font-size: 1.5em;
+    }
+    
+    .connect-form{
+        text-align: center;
+    }
+    .form-control{
+        text-align: center;
+        height: 7vh;
+        border: 0.2em;
+        border-color: black;
+        border-style: solid;
+    }
+    
+    .input-group-form-group{
+        margin: auto;
+        text-align: center;
+        width: 40%;
+    }
+    
+    #all{
+        background-color: #ffd8b8;
+        background-size: cover;
+        height: 93vh;
+    }
+    
+    
+    
+    div{
+        text-align: center;
+    }
+    
+    .btnv1{
+        height: 7vh;
+        width: 15vw;
+        background-color: #ff9100;
+        border-radius: 10px;
+        color: black;
+        margin: 2vh;
+        font-size: 1.5em;
+        border: 0.1em;
+        border-color: black;
+        border-style: solid;
+    }
+    button:hover {
+        background-color: #84C0D3;
+    }
+    button:focus {
+        background-color: #84C0D3;
+        color: rgb(255, 255, 255);
+    }
+    
+    
+    #logo_foot_l{
+        width: 25vh;
+        height: 25vh;
+        position: absolute;
+        background-image: url(../../../elements_graphiques/element_graphique_1.png);
+        background-size: 25vh 25vh;
+        top: 65vh;
+        left: 10vw;
+    }
+    .goBack{
+        position: absolute;
+        background-color: rgb(255, 255, 255);
+        color: black;
+        height: 5vh;
+        width: 10vw;
+        border-radius: 1vh;
+        top: 2vh;
+        left: 2vw;
+        font-size: 1em;
+        font-weight: 700;
+    }
+    #progress{
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+    }
+    #progress2{
+        position: absolute;
+        bottom: 0;
+        font-size: 0.5em;
+        width: 100%;
+    }
+    
+    input[type="file"] {
+      opacity: 0.5;
+      cursor: pointer;
+      border: 0;
+    }
+    
   }
-button:focus {
-    background-color: #84C0D3;
-    color: rgb(255, 255, 255);
+  
+ 
+  
+  @media only screen and (max-width: 767px) {
+    #window{
+        position: absolute;
+        top:2vh;
+    }
+    #c1{
+        position: absolute;
+        top:10vh;
+        left: 5vw;
+        height: 80vh;
+        width: 90vw;
+        background-color: rgb(133, 177, 145);
+        border: 0.5em;
+        border-color: rgb(238, 148, 30);
+        border-style: solid;
+    }
+    #btnup{
+        position: absolute;
+        background-image: url(../../../elements_graphiques/joindre.png);
+        width: 70vw;
+        height: 40vh;
+        background-size:70vw 40vh;
+        text-align: center;
+        top: 8vh;
+        left: 8vw;
+    }
+    #input{
+        position: absolute;
+        top: 34vh;
+        left: 7vw;
+        width: 55vw;
+        font-size: 0.5em;
+    }
+    .btnv{
+        position: absolute;
+        background-color: rgb(255, 255, 255);
+        color: black;
+        height: 5vh;
+        width: 25vw;
+        border-radius: 1vh;
+        top: 50vh;
+        left: 50vw;
+        font-size: 1em;
+        font-weight: 700;
+    }
+    
+    button:hover {
+        background-color: #84C0D3;
+      }
+    button:focus {
+        background-color: #84C0D3;
+        color: rgb(255, 255, 255);
+      }
+    
+    
+    #head{
+        height: 5vh;
+    }  
+    #head1{
+        font-size: 2em;
+        text-align: center;
+    }  
+    #head2{
+        font-size: 1.5em;
+        text-align: center;
+    }  
+    #para{
+        margin-top: 5vh;
+        font-size: 1em;
+        width: 60vw;
+        margin-left: 20vw;
+    }
+    
+    .connect-form{
+        text-align: center;
+    }
+    .form-control{
+        text-align: center;
+        height: 8vh;
+        border: 0.2em;
+        font-size: 1.3em;
+        border-color: black;
+        border-style: solid;
+    }
+    
+    .input-group-form-group{
+        margin: auto;
+        text-align: center;
+        width: 70vw;
+    }
+    
+    #all{
+        background-color: #ffd8b8;
+        background-size: cover;
+        height: 93vh;
+    }
+    
+    
+    
+    div{
+        text-align: center;
+    }
+    
+    .btnv1{
+        height: 7vh;
+        width: 50vw;
+        background-color: #ff9100;
+        border-radius: 10px;
+        color: black;
+        margin: 2vh;
+        font-size: 1.5em;
+        border: 0.1em;
+        border-color: black;
+        border-style: solid;
+    }
+    button:hover {
+        background-color: #84C0D3;
+    }
+    button:focus {
+        background-color: #84C0D3;
+        color: rgb(255, 255, 255);
+    }
+    
+    
+    .goBack{
+        position: absolute;
+        background-color: rgb(255, 255, 255);
+        color: black;
+        height: 5vh;
+        width: 30vw;
+        border-radius: 1vh;
+        top: 2vh;
+        left: 2vw;
+        font-size: 1em;
+        font-weight: 700;
+    }
+    #progress{
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+    }
+    #progress2{
+        position: absolute;
+        bottom: 0;
+        font-size: 0.8em;
+        width: 100%;
+    }
+    
+    input[type="file"] {
+      opacity: 0.5;
+      cursor: pointer;
+      border: 0;
+    }
+    
   }
 
-
-#head{
-    height: 5vh;
-}  
-#head1{
-    font-size: 4em;
-    text-align: center;
-}  
-#head2{
-    font-size: 2.5em;
-    text-align: center;
-}  
-#para{
-    margin-top: 5vh;
-    font-size: 1.5em;
-}
-
-.connect-form{
-    text-align: center;
-}
-.form-control{
-    text-align: center;
-    height: 7vh;
-    border: 0.2em;
-    border-color: black;
-    border-style: solid;
-}
-
-.input-group-form-group{
-    margin: auto;
-    text-align: center;
-    width: 40%;
-}
-
-#all{
-    background-color: #ffd8b8;
-    background-size: cover;
-    height: 93vh;
-}
-
-
-
-div{
-    text-align: center;
-}
-
-.btnv1{
-    height: 7vh;
-    width: 15vw;
-    background-color: #ff9100;
-    border-radius: 10px;
-    color: black;
-    margin: 2vh;
-    font-size: 1.5em;
-    border: 0.1em;
-    border-color: black;
-    border-style: solid;
-}
-button:hover {
-    background-color: #84C0D3;
-}
-button:focus {
-    background-color: #84C0D3;
-    color: rgb(255, 255, 255);
-}
-
-
-#logo_foot_l{
-    width: 25vh;
-    height: 25vh;
-    position: absolute;
-    background-image: url(../../../elements_graphiques/element_graphique_1.png);
-    background-size: 25vh 25vh;
-    top: 65vh;
-    left: 10vw;
-}
-.goBack{
-    position: absolute;
-    background-color: rgb(255, 255, 255);
-    color: black;
-    height: 5vh;
-    width: 10vw;
-    border-radius: 1vh;
-    top: 2vh;
-    left: 2vw;
-    font-size: 1em;
-    font-weight: 700;
-}
-#progress{
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-}
-
-input[type="file"] {
-  opacity: 0.5;
-  cursor: pointer;
-  border: 0;
-}
